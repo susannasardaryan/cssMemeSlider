@@ -152,7 +152,7 @@
     }
   
     .slider-img>img {
-      height: auto;
+      height: calc(15rem + 5vh);
     }
   }
 
