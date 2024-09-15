@@ -123,7 +123,7 @@
   
   @media only screen and (max-width: 780px) {
     .slider {
-      height: calc(15rem + 20vh);
+      height: 29rem;
     }
   
     .slider-footer {
@@ -148,7 +148,7 @@
   @media only screen and (max-width: 500px) {
     .slider {
       width: 80%;
-      height: calc(15rem + 10vh);
+      height: calc(20rem + 10vh);
     }
   
     .slider-img>img {
