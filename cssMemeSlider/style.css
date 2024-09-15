@@ -121,3 +121,38 @@
     animation: changeText 2s linear;
   }
   
+  @media only screen and (max-width: 780px) {
+    .slider {
+      height: 72vh;
+    }
+  
+    .slider-footer {
+      flex-direction: column;
+    }
+  
+    .slider-controls {
+      margin: 1.5rem auto;
+    }
+  
+    .slider-control {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin: 0 0.2rem;
+    }
+  
+    .slider-img>img {
+      height: 50vh;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .slider {
+      width: 80%;
+    }
+  
+    .slider-img>img {
+      height: 50vh;
+    }
+  }
+
+  
