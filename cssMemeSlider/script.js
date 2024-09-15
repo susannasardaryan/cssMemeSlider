@@ -27,7 +27,7 @@ for (let i = 0; i < sliderControl.length; i++) {
         image.classList.toggle('animate');
         sliderControl[i].querySelector('span').classList.toggle('active');
 
-        sliderControl[lastIndex].querySelector('span').classList.remove('active');
+        if(lastIndex!=i) sliderControl[lastIndex].querySelector('span').classList.remove('active');
 
         lastIndex = i;
     })
