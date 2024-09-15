@@ -5,20 +5,29 @@ let sliderControls = document.querySelector('.slider-controls');
 sliderControls.innerHTML = '';
 
 for (let i = 0; i < imageTexts.length; i++) {
-    sliderControls.innerHTML += `<span class="slider-control" data-index=${i}></span>`;
+    sliderControls.innerHTML += `<div class="slider-control"><span></span></div>`;
 }
 
 let sliderControl = document.querySelectorAll('.slider-control');
 let lastIndex=0;
-sliderControl[0].classList.toggle('active');
+sliderControl[0].querySelector('span').classList.toggle('active');
+
 for (let i = 0; i < sliderControl.length; i++) {
 
     sliderControl[i].addEventListener("click", () => {
-        imageText.textContent= imageTexts[i];
+        imageText.textContent='';
+        imageText.classList.remove('animateText');
+        setTimeout(()=>{     
+            for(let j=0; j<imageTexts[i].length; j++){
+                imageText.textContent += imageTexts[i][j];
+                imageText.classList.add('animateText');
+            }
+        },500);
         image.src = './images/meme' + i + '.jpg';
-        sliderControl[i].classList.toggle('active');
+        image.classList.toggle('animate');
+        sliderControl[i].querySelector('span').classList.toggle('active');
 
-        sliderControl[lastIndex].classList.remove('active');
+        sliderControl[lastIndex].querySelector('span').classList.remove('active');
 
         lastIndex = i;
     })
