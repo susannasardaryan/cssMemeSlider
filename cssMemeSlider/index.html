@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Css Meme Slider</title>
+    <title>CSS Image and Text Slider</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="slider">
-        <div class="slider-img">
-            <img src="./images/meme0.jpg" alt="Meme example" class="image animate">
+        <input type="radio" name="slider" id="b1" checked>
+        <input type="radio" name="slider" id="b2">
+        <input type="radio" name="slider" id="b3">
+        <input type="radio" name="slider" id="b4">
+        
+        <div class="slider-images">
+            <img src="./images/meme0.jpg" alt="Meme 0" class="img img1">
+            <img src="./images/meme1.jpg" alt="Meme 1" class="img img2">
+            <img src="./images/meme2.jpg" alt="Meme 2" class="img img3">
+            <img src="./images/meme3.jpg" alt="Meme 3" class="img img4">
         </div>
+
         <div class="slider-footer">
             <div class="slider-controls">
+                <label class="slider-control" for="b1"></label>
+                <label class="slider-control" for="b2"></label>
+                <label class="slider-control" for="b3"></label>
+                <label class="slider-control" for="b4"></label>
             </div>
-            <div class="slider-text animateText">
-                I am fine
-            </div>     
-        </div>
+            
+            <div class="slider-texts">
+                <span class="text text1">I am fine</span>
+                <span class="text text2">Me too</span>
+                <span class="text text3">When i find out slides doesn't support scripts</span>
+                <span class="text text4">But i did it</span>
+            </div>
+        </div>    
     </div>
 </body>
 </html>

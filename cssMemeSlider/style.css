@@ -1,159 +1,203 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  
-    transition: all 1s linear;
-  }
-  
-  .slider {
-    margin: auto;
-    width: 60%;
-    height: 50%;
-    padding: 0.6rem;
-    background-color: #25282A;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+body {
+  background: #c9bf9e;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.slider {
+  width: 40em;
+  height: 30em;
+  position: relative;
+  overflow: hidden;
+  background: rgba(53, 41, 25, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+
+input[type='radio'] {
+  display: none;
+}
+
+.slider-images {
+  width: 100%;
+  height: 80%;
+  position: relative;
+}
+
+.img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#b1:checked ~ .slider-images .img1 {
+  opacity: 1;
+}
+
+#b2:checked ~ .slider-images .img2 {
+  opacity: 1;
+}
+
+#b3:checked ~ .slider-images .img3 {
+  opacity: 1;
+}
+
+#b4:checked ~ .slider-images .img4 {
+  opacity: 1;
+}
+
+.slider-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.slider-control {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.slider-control:hover {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid white;
+}
+
+
+.slider-texts {
+  color: white;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.text {
+  display: none;
+  opacity: 0;
+
+  transition: opacity linear 1s;
+  animation: changeText 2s linear;
+}
+
+
+#b1:checked ~ .slider-footer .slider-texts .text1 {
+  display: block;
+  opacity: 1;
+}
+
+#b2:checked ~ .slider-footer .slider-texts .text2 {
+  display: block;
+  opacity: 1;
+}
+
+#b3:checked ~ .slider-footer .slider-texts .text3 {
+  display: block;
+  opacity: 1;
+}
+
+#b4:checked ~ .slider-footer .slider-texts .text4 {
+  display: block;
+  opacity: 1;
+}
+
+#b1:checked ~ .slider-footer .slider-controls label[for="b1"] {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: color 1s linear;
+}
+
+#b1:checked ~ .slider-footer .slider-controls label[for="b1"]:hover {
+  border: 1px solid white;
+}
+#b2:checked ~ .slider-footer .slider-controls label[for="b2"]:hover {
+  border: 1px solid white;
+}
+#b3:checked ~ .slider-footer .slider-controls label[for="b3"]:hover {
+  border: 1px solid white;
+}
+#b4:checked ~ .slider-footer .slider-controls label[for="b4"]:hover {
+  border: 1px solid white;
+}
+#b2:checked ~ .slider-footer .slider-controls label[for="b2"] {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: color 1s linear;
+}
+#b3:checked ~ .slider-footer .slider-controls label[for="b3"] {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: color 1s linear;
+}
+#b4:checked ~ .slider-footer .slider-controls label[for="b4"] {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: color 1s linear;
+}
+
+@keyframes changeText {
+  0% {
+    opacity: 0.2;
+    transform: translateX(-30%);
+
   }
 
-  .slider-controls {
-    width: 20%;
-    display: flex;
-    justify-content: end;
+  25% {
+    opacity: 0.35;
+    transform: translateX(-10%);
   }
 
-  .slider-control {
-    padding: 0.2rem 0.3rem;
+  50% {
+    opacity: 0.5;
+    transform: translateX(0%);
+
   }
-  .slider-control>span{
-    height: 0.6rem;
-    width: 0.6rem;
-    display: inline-block;
-    border: 1px solid #71ABFF;
-    background-color: #71ABFF;
-    border-radius: 50%;
-      
-    transition: background-color 1s linear, color 1s linear;
+  75% {
+    opacity: 0.75;
+    transform: translateX(15%);
+
   }
-  .slider-control>span:hover {
-    cursor: pointer;
-    border: 1px solid #FFF;
-    background-color: #FFF;
+  100% {
+    opacity: 1;
+    transform: translateX(20%);
+
   }
-  
-  span.active {
-    border: 1px solid #71ABFF;
-    background-color: transparent;
-    transition: background-color 1s linear;
+}
+@media only screen and (max-width: 780px) {
+  body{
+    align-items: center;
   }
-  
-  span.active:hover {
-    cursor: pointer;
-    border: 1px solid #FFF;
-    background-color: transparent;
+  .slider{
+    margin: 1rem;
   }
-  
   .slider-footer {
-    display: flex;
-    height: 2rem;
-    flex-direction: row-reverse;
-    width: 100%;
-    margin-top: 2%;
-  }
-  
-  .slider-text {
-    width: 80%;
-  
-    color: white;
-  }
-  
-  
-  .slider-img>img {
-    width: 100%;
-    height: calc(20rem + 10vh);
-    border-radius: 5px;
-  }
-
-  .animate {
-    animation: changeImg 2s linear;
-  }
-  
-  @keyframes changeImg {
-    0% {
-      opacity: 0.2;
-    }
-  
-    25% {
-      opacity: 0.35;
-    }
-  
-    50% {
-      opacity: 0.5;
-    }
-    75% {
-      opacity: 0.75;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes changeText {
-    0% {
-      color: rgba(255, 255, 255, 0);
-    }
-  
-    25% {
-      color: rgba(255, 255, 255, 0.3);
-    }
-  
-    50% {
-      color: rgba(255, 255, 255, 0.5);
-    }
-    75% {
-      color: rgba(255, 255, 255, 0.75);
-    }
-  
-    100% {
-      color: rgba(255, 255, 255, 1);
-    }
-  }
-  
-  .animateText {
-    animation: changeText 2s linear;
-  }
-  
-  @media only screen and (max-width: 780px) {
-    .slider {
-      height: 29rem;
-    }
-  
-    .slider-footer {
       flex-direction: column;
-    }
-  
-    .slider-controls {
-      margin: 1.5rem auto;
-    }
-  
-    .slider-control {
-      width: 0.5rem;
-      height: 0.5rem;
-      margin: 0 0.2rem;
-    }
-  
-    .slider-img>img {
-      height: calc(18rem + 5vh);
-    }
+      row-gap: 1rem;
   }
-
-  @media only screen and (max-width: 500px) {
-    .slider {
-      width: 80%;
-      height: calc(20rem + 10vh);
-    }
-  
-    .slider-img>img {
-      height: calc(15rem + 5vh);
-    }
+  .slider-texts{
+    width: 100%;
+    text-align: left;
   }
-
-  
+}
