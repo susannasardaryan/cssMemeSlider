@@ -69,20 +69,24 @@ input[type='radio'] {
 
 .slider-controls {
   display: flex;
-  gap: 10px;
 }
 
 .slider-control {
-  width: 12px;
-  height: 12px;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+.slider-control>span{
+  display: block;
+  position: relative;
+  width: 0.7rem;
+  height: 0.7rem;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  cursor: pointer;
+  
   border: 1px solid transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.slider-control:hover {
+.slider-control:hover span{
   background-color: rgba(255, 255, 255, 1);
   border: 1px solid white;
 }
@@ -123,35 +127,35 @@ input[type='radio'] {
   opacity: 1;
 }
 
-#b1:checked ~ .slider-footer .slider-controls label[for="b1"] {
+#b1:checked ~ .slider-footer .slider-controls label[for="b1"] span{
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
   transition: color 1s linear;
 }
 
-#b1:checked ~ .slider-footer .slider-controls label[for="b1"]:hover {
+#b1:checked ~ .slider-footer .slider-controls label[for="b1"]:hover span{
   border: 1px solid white;
 }
-#b2:checked ~ .slider-footer .slider-controls label[for="b2"]:hover {
+#b2:checked ~ .slider-footer .slider-controls label[for="b2"]:hover span{
   border: 1px solid white;
 }
-#b3:checked ~ .slider-footer .slider-controls label[for="b3"]:hover {
+#b3:checked ~ .slider-footer .slider-controls label[for="b3"]:hover span{
   border: 1px solid white;
 }
-#b4:checked ~ .slider-footer .slider-controls label[for="b4"]:hover {
+#b4:checked ~ .slider-footer .slider-controls label[for="b4"]:hover span{
   border: 1px solid white;
 }
-#b2:checked ~ .slider-footer .slider-controls label[for="b2"] {
+#b2:checked ~ .slider-footer .slider-controls label[for="b2"] span{
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
   transition: color 1s linear;
 }
-#b3:checked ~ .slider-footer .slider-controls label[for="b3"] {
+#b3:checked ~ .slider-footer .slider-controls label[for="b3"] span{
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
   transition: color 1s linear;
 }
-#b4:checked ~ .slider-footer .slider-controls label[for="b4"] {
+#b4:checked ~ .slider-footer .slider-controls label[for="b4"] span{
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
   transition: color 1s linear;
